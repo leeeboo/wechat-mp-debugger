@@ -6,7 +6,7 @@ type CDATAText struct {
 	Text string `xml:",innerxml"`
 }
 
-type BaseReply struct {
+type Base struct {
 	FromUserName CDATAText
 	ToUserName   CDATAText
 	MsgType      CDATAText
@@ -16,20 +16,20 @@ type BaseReply struct {
 
 type Text struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	Content CDATAText
 }
 
 type Image struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	PicUrl  CDATAText
 	MediaId CDATAText
 }
 
 type Voice struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	MediaId     CDATAText
 	Format      CDATAText
 	Recognition CDATAText `xml:",omitempty"`
@@ -37,21 +37,21 @@ type Voice struct {
 
 type Video struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	MediaId      CDATAText
 	ThumbMediaId CDATAText
 }
 
 type ShortVideo struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	MediaId      CDATAText
 	ThumbMediaId CDATAText
 }
 
 type Location struct {
 	XMLName xml.Name `xml:"xml"`
-	BaseReply
+	Base
 	Location_X float64
 	Location_Y float64
 	Scale      int
