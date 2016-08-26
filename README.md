@@ -3,6 +3,8 @@ A debug tool for wechat public account
 
 ## Usage
 
+Install & Run:
+
     go install
     wechat-mp-debugger Url Token FromUserName ToUserName Text
 
