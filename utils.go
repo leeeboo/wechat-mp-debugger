@@ -72,6 +72,10 @@ func send(url string, message string) ([]byte, error) {
 
 	resp, err := client.Do(req)
 
+	if err != nil {
+		return nil, err
+	}
+
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)
